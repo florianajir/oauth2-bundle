@@ -61,8 +61,7 @@ final class CreateClientCommand extends Command
                 'confidential',
                 null,
                 InputOption::VALUE_NONE,
-                'Identify a client as confidential or public.',
-                false
+                'Identify a client as confidential or public.'
             )
             ->addArgument(
                 'identifier',

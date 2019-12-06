@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Trikoder\Bundle\OAuth2Bundle\Tests\Acceptance;
 
 use DateTime;
+use DateTimeImmutable;
 use Trikoder\Bundle\OAuth2Bundle\Manager\Doctrine\RefreshTokenManager as DoctrineRefreshTokenManager;
 use Trikoder\Bundle\OAuth2Bundle\Model\AccessToken;
 use Trikoder\Bundle\OAuth2Bundle\Model\Client;
@@ -75,10 +76,10 @@ final class DoctrineRefreshTokenManagerTest extends AbstractAcceptanceTest
     {
         return new RefreshToken(
             $identifier,
-            (new DateTime())->modify($modify),
+            new DateTimeImmutable($modify),
             new AccessToken(
                 $identifier,
-                (new DateTime('+1 day')),
+                new DateTimeImmutable('+1 day'),
                 $client,
                 null,
                 []

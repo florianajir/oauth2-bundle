@@ -340,7 +340,7 @@ final class AuthorizationServerTest extends AbstractIntegrationTest
 
         // Response assertions.
         $this->assertSame('invalid_grant', $response['error']);
-        $this->assertSame('The user credentials were incorrect.', $response['message']);
+        $this->assertSame('The provided authorization grant (e.g., authorization code, resource owner credentials) or refresh token is invalid, expired, revoked, does not match the redirection URI used in the authorization request, or was issued to another client.', $response['message']);
     }
 
     public function testMissingUsernameFieldPasswordGrant(): void
@@ -740,7 +740,7 @@ final class AuthorizationServerTest extends AbstractIntegrationTest
         $response = $this->handleTokenRequest($request);
 
         // Response assertions.
-        $this->assertSame('invalid_client', $response['error']);
+        $this->assertSame('invalid_request', $response['error']);
         $this->assertSame('Client authentication failed', $response['message']);
     }
 

@@ -39,7 +39,7 @@ class Client
     /**
      * @var bool
      */
-    private $confidential = false;
+    private $confidential = true;
 
     public function __construct(string $identifier, string $secret)
     {

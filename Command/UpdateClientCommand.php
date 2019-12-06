@@ -67,7 +67,7 @@ final class UpdateClientCommand extends Command
                 'confidential',
                 null,
                 InputOption::VALUE_OPTIONAL,
-                'Set confidentiali for client. Use this option with value 0 to set public client.',
+                'Set client confidentiality. Use this option with value 0 to set client public.',
                 true
             )
             ->addArgument(
